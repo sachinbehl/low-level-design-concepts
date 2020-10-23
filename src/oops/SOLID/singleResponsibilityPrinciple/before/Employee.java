@@ -13,13 +13,14 @@ public abstract class Employee {
     private String lastName;
     private int monthlyIncome;
     private int nbHoursPerWeek;
-
+    protected int type;
     public Employee(String fullName, int monthlyIncome){
         setMonthlyIncome(monthlyIncome);
 
         String[] names = fullName.split(" ");
         this.firstName = names[0];
         this.lastName = names[1];
+        type = 0;
     }
 
     public String getEmail() {
@@ -63,32 +64,5 @@ public abstract class Employee {
         return this.firstName + " " + this.lastName;
     }
 
-    public  void save(){
-        try {
-        	Employee employee =this;
-            StringBuilder sb = new StringBuilder();
-            sb.append("### EMPLOYEE RECORD ####");
-            sb.append(System.lineSeparator());
-            sb.append("NAME: ");
-            sb.append(employee.firstName + " " + employee.lastName);
-            sb.append(System.lineSeparator());
-            sb.append("POSITION: ");
-            sb.append(employee.getClass().getTypeName());
-            sb.append(System.lineSeparator());
-            sb.append("EMAIL: ");
-            sb.append(employee.getEmail());
-            sb.append(System.lineSeparator());
-            sb.append("MONTHLY WAGE: ");
-            sb.append(employee.monthlyIncome);
-            sb.append(System.lineSeparator());
-
-            Path path = Paths.get(employee.getFullName()
-                    .replace(" ","_") + ".rec");
-            Files.write(path, sb.toString().getBytes());
-
-            System.out.println("Saved employee " + employee.toString());
-        } catch (IOException e){
-            System.out.println("ERROR: Could not save employee. " + e);
-        }
-    }
+    
 }

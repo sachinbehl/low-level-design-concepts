@@ -3,9 +3,7 @@ package oops.SOLID.openClosePrinciple.before.persistence;
 import java.util.Arrays;
 import java.util.List;
 
-import oops.SOLID.openClosePrinciple.before.employees.Employee;
-import oops.SOLID.openClosePrinciple.before.employees.FullTimeEmployee;
-import oops.SOLID.openClosePrinciple.before.employees.PartTimeEmployee;
+import oops.SOLID.openClosePrinciple.before.employees.*;
 
 public class EmployeeRepository {
 

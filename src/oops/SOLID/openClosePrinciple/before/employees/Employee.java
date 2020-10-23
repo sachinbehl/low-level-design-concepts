@@ -8,13 +8,20 @@ public abstract class Employee {
     private String lastName;
     private int monthlyIncome;
     private int nbHoursPerWeek;
-
+    private int type;
+    public int getType () {
+        return type;
+    }
+    public void setType(int t) {
+        type = t;
+    }
     public Employee(String fullName, int monthlyIncome){
         setMonthlyIncome(monthlyIncome);
 
         String[] names = fullName.split(" ");
         this.firstName = names[0];
         this.lastName = names[1];
+        type = 0;
     }
 
     public String getEmail() {
